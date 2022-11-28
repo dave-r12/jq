@@ -334,7 +334,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,
 }
 
 int
-pthread_key_create(pthread_key_t *key, void (*dtor)(void *))
+pthread_key_create1(pthread_key_t *key, void (*dtor)(void *))
 {
     tls_keys *key_defs, *new_key_defs;
     size_t i, k;
@@ -445,7 +445,7 @@ key_lookup(pthread_key_t key, tls_keys **kd,
 }
 
 int
-pthread_setspecific(pthread_key_t key, void *value)
+pthread_setspecific1(pthread_key_t key, void *value)
 {
     void **new_values;
     size_t new_num;
@@ -482,7 +482,7 @@ pthread_setspecific(pthread_key_t key, void *value)
 }
 
 void *
-pthread_getspecific(pthread_key_t key)
+pthread_getspecific1(pthread_key_t key)
 {
     if (key >= values.values_num)
         return NULL;
