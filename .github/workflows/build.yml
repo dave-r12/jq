@@ -90,7 +90,7 @@ jobs:
         with:
           msystem: UCRT64
           update: true
-          install: git gcc libtool make autoconf automake flex bison
+          install: git mingw-w64-ucrt-x86_64-gcc libtool make autoconf automake flex bison
       - name: CI-Build
         shell: msys2 {0}
         run: |
